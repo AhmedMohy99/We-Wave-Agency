@@ -9,104 +9,166 @@
 </head>
 <body>
 
+    <!-- 3D Animated Background Logo -->
+    <div class="bg-3d-container">
+        <div class="floating-logo">
+            <svg viewBox="0 0 200 200" class="logo-3d">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#c4fb6d;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8bc34a;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <!-- Outer Ring -->
+                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#grad1)" stroke-width="2" class="ring ring-1"/>
+                <circle cx="100" cy="100" r="75" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.5" class="ring ring-2"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="url(#grad1)" stroke-width="0.5" opacity="0.3" class="ring ring-3"/>
+                <!-- Wave Symbol -->
+                <path d="M40 100 Q60 60 80 100 T120 100 T160 100" 
+                      fill="none" stroke="url(#grad1)" stroke-width="4" 
+                      stroke-linecap="round" filter="url(#glow)" class="wave wave-1"/>
+                <path d="M40 115 Q60 75 80 115 T120 115 T160 115" 
+                      fill="none" stroke="url(#grad1)" stroke-width="3" 
+                      stroke-linecap="round" opacity="0.6" class="wave wave-2"/>
+                <!-- Center Dot -->
+                <circle cx="100" cy="100" r="8" fill="url(#grad1)" filter="url(#glow)" class="center-dot"/>
+            </svg>
+        </div>
+        <div class="bg-particles"></div>
+    </div>
+
+    <!-- Navigation -->
     <header>
         <div class="container nav-wrapper">
             <nav>
-                <div class="logo-container">
-                    <!-- SVG Logo - Never blurry, loads instantly -->
-                    <svg class="logo-icon" viewBox="0 0 100 100" width="45" height="45">
+                <a href="index.html" class="logo-container">
+                    <svg viewBox="0 0 100 100" width="40" height="40" class="nav-logo">
                         <defs>
-                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#c4fb6d;stop-opacity:1" />
                                 <stop offset="100%" style="stop-color:#8bc34a;stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="4"/>
-                        <path d="M30 50 L45 65 L70 35" stroke="url(#logoGradient)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+                        <path d="M30 50 L45 65 L70 35" stroke="url(#logoGrad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <div class="logo-text">WE<span>WAVE</span></div>
-                </div>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="#about">The Agency</a></li>
-                    <li><a href="#portfolio">Our Work</a></li>
-                    <li><a href="#contact" class="nav-btn">Start Project</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">The Agency</a></li>
+                    <li><a href="portfolio.html">Our Work</a></li>
+                    <li><a href="contact.html" class="nav-btn">Start Project</a></li>
                 </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero reveal">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Business Mindset.<br><span>Real Impact.</span></h1>
-            <p class="hero-subtext">We don't just execute social media. We drive growth through strategic, measurable performance.</p>
-            <div class="hero-btns">
-                <a href="#portfolio" class="btn primary">View Portfolio</a>
-                <a href="#contact" class="btn secondary">Get in Touch</a>
+            <div class="hero-content reveal">
+                <h1 class="hero-title">Business Mindset.<br><span>Real Impact.</span></h1>
+                <p class="hero-subtext">We don't just execute social media. We drive growth through strategic, measurable performance.</p>
+                <div class="hero-btns">
+                    <a href="portfolio.html" class="btn primary">View Portfolio</a>
+                    <a href="contact.html" class="btn secondary">Get in Touch</a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section container">
-        <div class="reveal">
-            <h2 class="section-tag">/ Who We Are</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>We are a marketing team that works with a business mindset not just social media execution. We understand that every market is different and brands are looking for measurable results.</p>
+            
+            <!-- Quick Stats -->
+            <div class="stats-row reveal">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years Experience</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="portfolio-section container">
-        <h2 class="section-title reveal">Featured Expertise</h2>
-        <div class="portfolio-grid">
-            <div class="work-card reveal">
-                <span class="work-num">01</span>
-                <h3>Social Media Design</h3>
-                <p>Captivating visuals that represent your brand story.</p>
-            </div>
-            <div class="work-card reveal">
-                <span class="work-num">02</span>
-                <h3>Web & Tech</h3>
-                <p>Developing high-performance landing pages for growth.</p>
-            </div>
-            <div class="work-card reveal">
-                <span class="work-num">03</span>
-                <h3>Paid Media</h3>
-                <p>Scalable advertising strategies with measurable ROI.</p>
-            </div>
-            <div class="work-card reveal">
-                <span class="work-num">04</span>
-                <h3>Strategy</h3>
-                <p>Custom-tailored business consulting for evolving markets.</p>
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title reveal">What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">🎨</div>
+                    <h3>Social Media Design</h3>
+                    <p>Captivating visuals that represent your brand story</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>High-performance landing pages for growth</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">📈</div>
+                    <h3>Paid Media</h3>
+                    <p>Scalable advertising with measurable ROI</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">🎯</div>
+                    <h3>Strategy</h3>
+                    <p>Business consulting for evolving markets</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container reveal">
-            <div class="contact-card">
-                <h2>Let's build something <span>measurable.</span></h2>
-                <div class="info-row">
-                    <div class="info-box">
-                        <label>Email</label>
-                        <a href="mailto:Ayman170435@bue.edu.eg">Ayman170435@bue.edu.eg</a>
-                    </div>
-                    <div class="info-box">
-                        <label>Phone</label>
-                        <a href="tel:+201117230557">+20 11 17230557</a>
-                    </div>
-                    <div class="info-box">
-                        <label>Location</label>
-                        <p>Cairo, Egypt</p>
-                    </div>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Ready to Make an Impact?</h2>
+                <p>Let's build something measurable together.</p>
+                <a href="contact.html" class="btn primary">Start Your Project</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 We-Wave-Agency. All Rights Reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">WE<span>WAVE</span></span>
+                    <p>Business Mindset. Real Impact.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">📧</a>
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">💼</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 We-Wave-Agency. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
