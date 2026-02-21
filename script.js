@@ -1,26 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Select all elements with the 'reveal' class
-    const reveals = document.querySelectorAll(".reveal");
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 
-    // Create intersection observer for better performance
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+const renderer = new THREE.WebGLRenderer({alpha:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById("canvas-container").appendChild(renderer.domElement);
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                // Optional: Stop observing once revealed
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+const geometry = new THREE.TorusKnotGeometry(2, 0.6, 120, 16);
+const material = new THREE.MeshBasicMaterial({
+    color: 0xc6ff00,
+    wireframe: true
+});
 
-    // Observe all reveal elements
-    reveals.forEach(reveal => {
-        observer.observe(reveal);
-    });
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+camera.position.z = 6;
+
+function animate() {
+    requestAnimationFrame(animate);
+    mesh.rotation.x += 0.01;
+    mesh.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+
+animate();
+
+gsap.from(".hero-content", {
+    y: 100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power4.out"
 });
