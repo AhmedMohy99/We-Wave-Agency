@@ -3,75 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We-Wave-Agency | Business-Driven Marketing</title>
-    <link rel="stylesheet" href="style.css">
+    <title>We-Wave-Agency | Business Growth Specialists</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #080808;
+            --accent: #c4fb6d; /* The Neon Lime from your Portfolio */
+            --glass: rgba(255, 255, 255, 0.03);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo-text { font-family: 'Space Grotesk', sans-serif; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+        /* --- PRO HEADER --- */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass);
+            padding: 20px 0;
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        /* SVG LOGO */
+        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; fill: var(--accent); }
+        .logo-text { color: #fff; font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; }
+        .logo-text span { color: var(--accent); }
+
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1c14 0%, #080808 70%);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.9;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+            display: block;
+        }
+
+        .hero-p {
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+        }
+
+        .cta-btn {
+            background: var(--accent);
+            color: #000;
+            padding: 20px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(196, 251, 109, 0.4);
+        }
+
+        /* --- SECTIONS --- */
+        section { padding: 140px 0; }
+
+        .section-header { margin-bottom: 60px; }
+        .label { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .section-title { font-size: 3rem; }
+
+        /* ABOUT */
+        .about-box {
+            background: var(--glass);
+            padding: 60px;
+            border-radius: 40px;
+            border: 1px solid var(--glass);
+            font-size: 1.8rem;
+            line-height: 1.4;
+        }
+
+        /* PORTFOLIO GRID */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card {
+            background: var(--glass);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid transparent;
+            transition: 0.5s;
+        }
+        .card:hover {
+            border-color: var(--accent);
+            background: rgba(196, 251, 109, 0.05);
+            transform: translateY(-10px);
+        }
+        .card-num { color: var(--accent); font-weight: 700; margin-bottom: 20px; display: block; }
+        .card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+        .card p { color: var(--text-dim); }
+
+        /* CONTACT */
+        .contact-footer {
+            background: var(--accent);
+            color: #000;
+            border-radius: 50px;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .contact-footer h2 { font-size: 4rem; margin-bottom: 40px; }
+        .contact-details { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .contact-link { color: #000; text-decoration: none; font-weight: 700; font-size: 1.2rem; border-bottom: 2px solid #000; }
+
+        /* --- ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer { text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3.5rem; }
+            .about-box { font-size: 1.2rem; padding: 30px; }
+            .contact-footer h2 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="container nav-wrapper">
+        <div class="container">
             <nav>
-                <div class="logo">We-Wave<span>-Agency</span></div>
+                <a href="#" class="logo-box">
+                    <svg class="logo-icon" viewBox="0 0 100 100">
+                        <path d="M10 50 Q 25 10 40 50 T 70 50 T 100 50 L 100 90 L 10 90 Z" />
+                        <circle cx="70" cy="30" r="10" />
+                    </svg>
+                    <div class="logo-text">WE<span>WAVE</span></div>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">Agency</a></li>
+                    <li><a href="#portfolio">Expertise</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero animate">
-        <div class="container">
-            <h1>Real Impact. <br><span>Measurable Results.</span></h1>
-            <p>We work with a business mindset, not just social media execution. We help brands grow in a competitive market.</p>
-            <a href="#contact" class="btn">Start Your Growth</a>
+    <section class="hero">
+        <div class="container hero-content reveal">
+            <h1>Business Mindset. <span>Impact Driven.</span></h1>
+            <p class="hero-p">We understand that brands are looking for real impact and measurable results, not just good-looking content.</p>
+            <a href="#contact" class="cta-btn">Start Your Wave</a>
         </div>
     </section>
 
     <section id="about" class="container">
-        <h2 class="section-title animate"><span>Who We Are</span></h2>
-        <div class="about-content animate">
-            <p>We are a marketing team that works with a business mindset not just social media execution. We understand that every market is different, competition is growing and brands are looking for real impact and measurable results, not just good-looking content.</p>
+        <div class="reveal">
+            <span class="label">Our Philosophy</span>
+            <div class="about-box">
+                "We work with a business mindset, not just social media execution. Every market is different, competition is growing, and we ensure your brand stands out with measurable success."
+            </div>
         </div>
     </section>
 
     <section id="portfolio" class="container">
-        <h2 class="section-title animate"><span>Featured Portfolio</span></h2>
+        <div class="section-header reveal">
+            <span class="label">Featured Portfolio</span>
+            <h2 class="section-title">Core Solutions</h2>
+        </div>
         <div class="grid">
-            <div class="card animate">
-                <h3>01. Social Media Design</h3>
-                <p>Visual storytelling that captures attention and drives engagement.</p>
+            <div class="card reveal">
+                <span class="card-num">01</span>
+                <h3>Social Media Design</h3>
+                <p>Visual excellence that bridges the gap between art and business strategy.</p>
             </div>
-            <div class="card animate">
-                <h3>02. Web Development</h3>
-                <p>High-converting landing pages and websites designed for ROI.</p>
+            <div class="card reveal">
+                <span class="card-num">02</span>
+                <h3>Development</h3>
+                <p>Building landing pages and e-commerce stores that actually convert visitors into revenue.</p>
             </div>
-            <div class="card animate">
-                <h3>03. E-Commerce Growth</h3>
-                <p>Strategic solutions to scale your online sales and operations.</p>
-            </div>
-            <div class="card animate">
-                <h3>04. Performance Marketing</h3>
-                <p>Paid advertising focused on impact and data-driven results.</p>
+            <div class="card reveal">
+                <span class="card-num">03</span>
+                <h3>Performance</h3>
+                <p>Paid advertising and growth marketing focused on ROI and scale.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="container">
-        <h2 class="section-title animate"><span>Contact Us</span></h2>
-        <div class="contact-grid">
-            <div class="contact-item animate">
-                <h4>Email</h4>
-                <a href="mailto:Ayman170435@bue.edu.eg">Ayman170435@bue.edu.eg</a>
-            </div>
-            <div class="contact-item animate">
-                <h4>Phone</h4>
-                <a href="tel:+201117230557">+20 11 17230557</a>
-            </div>
-            <div class="contact-item animate">
-                <h4>Address</h4>
-                <p>Cairo, Egypt</p>
+        <div class="contact-footer reveal">
+            <h2>Ready to Scale?</h2>
+            <div class="contact-details">
+                <a href="mailto:Ayman170435@bue.edu.eg" class="contact-link">Ayman170435@bue.edu.eg</a>
+                <a href="tel:+201117230557" class="contact-link">+20 11 17230557</a>
+                <p class="contact-link" style="border:none">Cairo, Egypt</p>
             </div>
         </div>
     </section>
@@ -80,6 +244,17 @@
         <p>&copy; 2026 We-Wave-Agency. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
