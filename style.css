@@ -1,51 +1,38 @@
 /* ===============================
-   HERO TITLE GRADIENT
+   DARK ABOUT PAGE STYLE
 ================================= */
 
+.about-section {
+    padding: 120px 10%;
+    text-align: center;
+    background: #0b0f18;
+    color: white;
+}
+
+/* Gradient Title */
 .hero-title {
-    font-size: 50px;
+    font-size: 55px;
     font-weight: bold;
     background: linear-gradient(90deg, white, red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
 }
 
-/* ===============================
-   ABOUT SECTION DESIGN
-================================= */
-
-.about-section {
-    padding: 100px 10%;
-    text-align: center;
-    position: relative;
-    color: white;
-    background: url("logo.jpg") center/300px no-repeat fixed;
-}
-
-/* Dark overlay for readability */
-.about-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: -1;
-}
-
-/* Cards Layout */
+/* Grid Layout */
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 35px;
     margin-top: 60px;
 }
 
-/* Individual Section Card */
+/* Cards Style */
 .about-card {
-    padding: 35px;
+    padding: 40px;
     border-radius: 25px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
     transition: 0.4s;
 }
 
@@ -53,14 +40,15 @@
     transform: translateY(-10px);
 }
 
-/* Card Title */
+/* Card Titles */
 .about-card h3 {
     color: red;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-/* Text Styling */
+/* Paragraph Text */
 .about-card p {
-    line-height: 1.7;
+    line-height: 1.8;
     font-size: 17px;
+    opacity: 0.9;
 }
