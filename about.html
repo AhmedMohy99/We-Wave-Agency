@@ -1,96 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlTag">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | We-Wave-Agency</title>
-
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4WS40NWHK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X4WS40NWHK');
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | We-Wave-Agency</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
-    <span class="brand-name">We-Wave-Agency</span>
-  </a>
+<header class="header">
+<div class="logo-box">
+<img src="logo.jpg" class="logo">
+</div>
 
-  <button class="menu-btn" id="menuBtn" aria-label="Open Menu" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+<a href="https://www.instagram.com/wewaveagency/" target="_blank">Instagram</a>
+</nav>
 
-  <div class="nav-overlay" id="navOverlay"></div>
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ar')">AR</button>
+</div>
 
-  <nav class="side-nav" id="sideNav">
-    <div class="side-top">
-      <div class="side-title">Menu</div>
-      <button class="side-close" id="sideClose" aria-label="Close Menu">✕</button>
-    </div>
-
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
-
-    <a href="https://www.instagram.com/wewaveagency/" target="_blank" rel="noopener" class="nav-instagram">
-      Instagram ↗
-    </a>
-  </nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
 
-<main class="about-wrap">
-  <section class="about-hero">
-    <h1>About We-Wave-Agency</h1>
-    <p>
-      We are a marketing team that works with a business mindset — not just social media execution.
-      We build growth systems that help brands scale with clarity, creativity, and measurable performance.
-    </p>
-  </section>
+<section class="page">
 
-  <section class="about-grid">
-    <div class="about-card">
-      <h2>About Us</h2>
-      <p>
-        Every market is different. Competition is growing.
-        Brands need real impact and measurable results — not just good-looking content.
-        We create strategy-driven marketing that connects brands to the right audience and drives real business outcomes.
-      </p>
-    </div>
+<h1 data-en="About Us" data-ar="من نحن">About Us</h1>
 
-    <div class="about-card">
-      <h2>Mission</h2>
-      <p>
-        Our mission is to empower brands with customized marketing strategies that combine clear thinking, creative execution, and measurable performance.
-        We work closely with our clients to understand their goals, market challenges, and growth opportunities,
-        delivering integrated marketing solutions that create real business impact.
-      </p>
-    </div>
+<div class="about-grid">
 
-    <div class="about-card">
-      <h2>Vision</h2>
-      <p>
-        To become a trusted marketing partner for brands seeking sustainable growth through strategy driven and result-oriented marketing solutions.
-        We aim to build long-term partnerships by helping businesses scale, adapt, and compete effectively in evolving markets.
-      </p>
-    </div>
-  </section>
-</main>
+<div class="box">
+<h2 data-en="About" data-ar="نبذة عامة">About</h2>
+<p data-en="We are a marketing team that works with a business mindset. We create structured growth systems that deliver measurable results."
+data-ar="نحن فريق تسويق يعمل بعقلية تجارية واضحة. نصمم أنظمة نمو متكاملة تحقق نتائج قابلة للقياس.">
+We are a marketing team...
+</p>
+</div>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> We-Wave-Agency. All rights reserved.</p>
-</footer>
+<div class="box">
+<h2 data-en="Mission" data-ar="الرسالة">Mission</h2>
+<p data-en="Our mission is to empower brands with customized marketing strategies that combine clear thinking, creative execution, and measurable performance."
+data-ar="مهمتنا هي تمكين العلامات التجارية من خلال استراتيجيات تسويق مخصصة تجمع بين التفكير الواضح والتنفيذ الإبداعي والأداء القابل للقياس.">
+Our mission is...
+</p>
+</div>
+
+<div class="box">
+<h2 data-en="Vision" data-ar="الرؤية">Vision</h2>
+<p data-en="To become a trusted marketing partner for brands seeking sustainable growth through strategy driven marketing solutions."
+data-ar="أن نصبح شريكًا تسويقيًا موثوقًا للعلامات التجارية التي تسعى إلى نمو مستدام من خلال حلول تسويقية قائمة على الاستراتيجية.">
+To become a trusted marketing partner...
+</p>
+</div>
+
+</div>
+
+</section>
 
 <script src="script.js"></script>
 </body>
