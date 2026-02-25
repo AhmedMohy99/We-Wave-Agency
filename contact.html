@@ -1,39 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact - We-Wave-Agency</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - We-Wave Agency</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-<img src="logo.jpg" class="logo">
+<img src="logo.jpg" class="logo" alt="We-Wave Agency Logo">
 <nav>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="contact.html">Contact</a>
 </nav>
 </header>
 
-<section style="padding:150px 40px;text-align:center;">
+<section class="contact-section">
 <h1>Start Your Project</h1>
 
-<form action="https://formspree.io/f/your-form-id" method="POST">
+<form action="https://formspree.io/f/mlgwabbk" method="POST">
 
-<input type="text" name="name" placeholder="Full Name" required><br><br>
-<input type="email" name="email" placeholder="Email" required><br><br>
-<input type="text" name="company" placeholder="Company Name"><br><br>
-<textarea name="message" placeholder="Project Details"></textarea><br><br>
+<input type="hidden" name="_subject" value="New Project Request - We-Wave Agency">
+<input type="hidden" name="_captcha" value="false">
 
-<button type="submit" class="btn">Send</button>
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="company" placeholder="Company Name">
+<textarea name="message" placeholder="Tell us about your project..." required></textarea>
+
+<button type="submit" class="btn">Send Message</button>
 
 </form>
 
-<p style="margin-top:40px;">
-Email: Wewave111@gmail.com<br>
-Phone: +20 1117230557
-</p>
+<div class="contact-info">
+<p>Email: Ayman170435@bue.edu.eg</p>
+<p>Phone: +20 1117230557</p>
+</div>
 
 </section>
 
