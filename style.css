@@ -8,7 +8,7 @@ body{
 }
 
 /* =========================
-   Responsive Header + Menu
+   Header
 ========================= */
 .site-header{
   position:fixed;
@@ -33,49 +33,22 @@ body{
 
 .brand-name{
   color:#fff;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.3px;
   font-size:16px;
 }
 
 .logo{height:44px}
 
-/* Desktop nav */
-.site-nav{
-  display:flex;
-  gap:22px;
-  align-items:center;
-}
-
-.site-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:800;
-  padding:10px 12px;
-  border-radius:10px;
-}
-
-.site-nav a:hover{color:#c6ff00}
-
-.nav-cta{
-  background:#c6ff00;
-  color:#000 !important;
-}
-
-.nav-cta:hover{
-  color:#000 !important;
-  box-shadow:0 12px 30px rgba(198,255,0,.15);
-}
-
 /* Hamburger button */
 .menu-btn{
-  display:none;
   width:44px;
   height:44px;
   border-radius:12px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(0,0,0,.40);
   cursor:pointer;
+  display:flex;
   align-items:center;
   justify-content:center;
   gap:5px;
@@ -90,40 +63,99 @@ body{
   border-radius:10px;
 }
 
-/* Mobile dropdown */
-@media (max-width: 900px){
-  .menu-btn{display:flex;}
+/* =========================
+   Slide Menu + Overlay
+========================= */
+.nav-overlay{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+  opacity:0;
+  pointer-events:none;
+  transition: .25s ease;
+  z-index: 999;
+}
+.nav-overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
 
-  .site-nav{
-    position:absolute;
-    top:70px;
-    right:18px;
-    width:min(320px, calc(100vw - 36px));
-    display:none;
-    flex-direction:column;
-    align-items:stretch;
-    gap:8px;
-    padding:12px;
-    border-radius:16px;
-    background: rgba(0,0,0,.92);
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow: 0 18px 40px rgba(0,0,0,.35);
-  }
+.side-nav{
+  position:fixed;
+  top:0;
+  right:-360px;
+  height:100vh;
+  width:min(340px, 86vw);
+  background: rgba(0,0,0,.92);
+  border-left:1px solid rgba(255,255,255,.10);
+  box-shadow: -20px 0 60px rgba(0,0,0,.55);
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition: right .25s ease;
+  z-index: 1000;
+}
+.side-nav.open{ right:0; }
 
-  .site-nav.open{display:flex;}
+.side-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 6px 14px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  margin-bottom:6px;
+}
 
-  .site-nav a{
-    padding:14px 14px;
-    border-radius:12px;
-    background: rgba(255,255,255,.04);
-  }
-  .site-nav a:hover{
-    background: rgba(198,255,0,.10);
-  }
+.side-title{ font-weight:900; letter-spacing:.3px; }
+
+.side-close{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  color:#fff;
+  cursor:pointer;
+}
+
+.side-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  padding:14px 14px;
+  border-radius:12px;
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
+.side-nav a:hover{
+  background: rgba(198,255,0,.10);
+  border-color: rgba(198,255,0,.22);
+}
+
+.side-nav .nav-cta{
+  background:#c6ff00;
+  color:#000 !important;
+  border-color: transparent;
+}
+.side-nav .nav-cta:hover{
+  background:#c6ff00;
+  color:#000 !important;
+}
+
+.nav-instagram{
+  margin-top:auto;
+  background: rgba(225,29,46,.18);
+  border-color: rgba(225,29,46,.30);
+}
+.nav-instagram:hover{
+  background: rgba(225,29,46,.28);
+  border-color: rgba(225,29,46,.40);
 }
 
 /* =========================
-   Home Hero + 3D background
+   Home Hero + 3D
 ========================= */
 .hero{
   height:100vh;
@@ -132,7 +164,7 @@ body{
   justify-content:center;
   text-align:center;
   position:relative;
-  padding-top:70px; /* fixed header spacing */
+  padding-top:70px; /* header spacing */
 }
 
 #canvas-container{
@@ -150,8 +182,14 @@ body{
   padding:0 18px;
 }
 
-.hero h1{font-size:60px;margin-bottom:18px}
-.hero p{color:#c6ff00;margin-bottom:26px;font-size:20px}
+.hero h1{font-size:60px;margin-bottom:16px}
+
+.hero-sub{
+  color:#fff;
+  margin-bottom:26px;
+  font-size:20px;
+  opacity:.92;
+}
 
 .hero-actions{
   display:flex;
@@ -168,6 +206,10 @@ body{
   font-weight:bold;
   border-radius:8px;
   display:inline-block;
+}
+
+.btn:hover{
+  box-shadow: 0 16px 34px rgba(198,255,0,.18);
 }
 
 .btn-outline{
@@ -224,7 +266,7 @@ body{
 .card p{color:rgba(255,255,255,.75); line-height:1.7}
 
 /* =========================
-   About Page Layout
+   About Page
 ========================= */
 .about-wrap{
   padding:120px 18px 70px;
