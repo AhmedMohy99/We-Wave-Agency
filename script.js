@@ -1,33 +1,56 @@
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | We-Wave-Agency</title>
 
-const renderer = new THREE.WebGLRenderer({alpha:true});
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById("canvas-container").appendChild(renderer.domElement);
+  <link rel="stylesheet" href="style.css" />
 
-const geometry = new THREE.TorusKnotGeometry(2, 0.6, 120, 16);
-const material = new THREE.MeshBasicMaterial({
-    color: 0xc6ff00,
-    wireframe: true
-});
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4WS40NWHK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X4WS40NWHK');
+  </script>
+</head>
 
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
+<body>
 
-camera.position.z = 6;
+<header>
+  <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-function animate() {
-    requestAnimationFrame(animate);
-    mesh.rotation.x += 0.01;
-    mesh.rotation.y += 0.01;
-    renderer.render(scene, camera);
-}
+<section style="padding:150px 40px;text-align:center;">
+  <h1>Start Your Project</h1>
 
-animate();
+  <form action="https://formspree.io/f/mlgwabbk" method="POST" style="max-width:520px;margin:30px auto 0;">
+    <input type="hidden" name="_subject" value="New Project Request - We-Wave-Agency">
+    <input type="hidden" name="_captcha" value="false">
 
-gsap.from(".hero-content", {
-    y: 100,
-    opacity: 0,
-    duration: 1.5,
-    ease: "power4.out"
-});
+    <input type="text" name="name" placeholder="Full Name" required style="width:100%;padding:14px;margin-bottom:14px;">
+    <input type="email" name="email" placeholder="Email Address" required style="width:100%;padding:14px;margin-bottom:14px;">
+    <input type="text" name="company" placeholder="Company Name (optional)" style="width:100%;padding:14px;margin-bottom:14px;">
+
+    <textarea name="message" placeholder="Project Details" required style="width:100%;padding:14px;height:140px;margin-bottom:18px;"></textarea>
+
+    <button type="submit" class="btn" style="border:none;cursor:pointer;">Send</button>
+  </form>
+
+  <p style="margin-top:40px;line-height:1.8;">
+    Email: Wewave111@gmail.com<br>
+    Phone: +20 1117230557
+  </p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
