@@ -5,7 +5,7 @@ const renderer = new THREE.WebGLRenderer({alpha:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("canvas-container").appendChild(renderer.domElement);
 
-const geometry = new THREE.TorusKnotGeometry(2, 0.6, 120, 16);
+const geometry = new THREE.TorusKnotGeometry(2, 0.6, 100, 16);
 const material = new THREE.MeshBasicMaterial({
     color: 0xc6ff00,
     wireframe: true
