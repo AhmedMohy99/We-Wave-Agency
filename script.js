@@ -2,7 +2,7 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Slide menu toggle
+// Slide menu
 const menuBtn = document.getElementById("menuBtn");
 const sideNav = document.getElementById("sideNav");
 const navOverlay = document.getElementById("navOverlay");
@@ -26,20 +26,11 @@ if (menuBtn) menuBtn.addEventListener("click", openMenu);
 if (sideClose) sideClose.addEventListener("click", closeMenu);
 if (navOverlay) navOverlay.addEventListener("click", closeMenu);
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeMenu();
-});
-
-if (sideNav){
-  sideNav.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", closeMenu);
-  });
-}
-
-// 3D background ONLY on Home
+// ONLY run 3D if BOTH container AND THREE exist
 const container = document.getElementById("canvas-container");
 
-if (container && window.THREE) {
+if (container && typeof THREE !== "undefined") {
+
   const scene = new THREE.Scene();
 
   const camera = new THREE.PerspectiveCamera(
@@ -76,15 +67,5 @@ if (container && window.THREE) {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-}
-
-// Animate hero content (Home) if GSAP exists
-if (window.gsap && document.querySelector(".hero-content")) {
-  gsap.from(".hero-content", {
-    y: 90,
-    opacity: 0,
-    duration: 1.3,
-    ease: "power4.out"
   });
 }
