@@ -1,27 +1,42 @@
-// Set year in footer (all pages)
+// Footer year
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Mobile menu toggle (all pages)
+// Slide menu toggle
 const menuBtn = document.getElementById("menuBtn");
-const siteNav = document.getElementById("siteNav");
+const sideNav = document.getElementById("sideNav");
+const navOverlay = document.getElementById("navOverlay");
+const sideClose = document.getElementById("sideClose");
 
-if (menuBtn && siteNav) {
-  menuBtn.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
+function openMenu(){
+  if (!sideNav || !navOverlay || !menuBtn) return;
+  sideNav.classList.add("open");
+  navOverlay.classList.add("open");
+  menuBtn.setAttribute("aria-expanded", "true");
+}
 
-  // Close menu after clicking any link
-  siteNav.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      siteNav.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    });
+function closeMenu(){
+  if (!sideNav || !navOverlay || !menuBtn) return;
+  sideNav.classList.remove("open");
+  navOverlay.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}
+
+if (menuBtn) menuBtn.addEventListener("click", openMenu);
+if (sideClose) sideClose.addEventListener("click", closeMenu);
+if (navOverlay) navOverlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMenu();
+});
+
+if (sideNav){
+  sideNav.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", closeMenu);
   });
 }
 
-// 3D background (ONLY runs on Home if canvas exists)
+// 3D background ONLY on Home
 const container = document.getElementById("canvas-container");
 
 if (container && window.THREE) {
@@ -64,7 +79,7 @@ if (container && window.THREE) {
   });
 }
 
-// Animate hero text only if exists and GSAP loaded (Home)
+// Animate hero content (Home) if GSAP exists
 if (window.gsap && document.querySelector(".hero-content")) {
   gsap.from(".hero-content", {
     y: 90,
