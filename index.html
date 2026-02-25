@@ -23,13 +23,23 @@
 
 <body>
 
-<header>
-  <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
-  <nav>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
+    <span class="brand-name">We-Wave-Agency</span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open Menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="site-nav" id="siteNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </nav>
 </header>
 
