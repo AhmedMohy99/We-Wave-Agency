@@ -18,25 +18,67 @@
 </head>
 
 <body>
-<header>
-  <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
-  <nav>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
+    <span class="brand-name">We-Wave-Agency</span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open Menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="site-nav" id="siteNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </nav>
 </header>
 
-<section style="padding:150px 40px;text-align:center;">
-  <h1>About Us</h1>
-  <p style="max-width:800px;margin:30px auto;font-size:18px;line-height:1.7;">
-    We are a marketing team that works with a business mindset, not just social media execution.
-    Every market is different. Competition is growing.
-    Brands need real impact and measurable results — not just good-looking content.
-    We build growth systems that scale businesses.
-  </p>
-</section>
+<main class="about-wrap">
+  <section class="about-hero">
+    <h1>About We-Wave-Agency</h1>
+    <p>
+      We are a marketing team that works with a business mindset — not just social media execution.
+      We build growth systems that help brands scale with clarity, creativity, and measurable performance.
+    </p>
+  </section>
+
+  <section class="about-grid">
+    <div class="about-card">
+      <h2>About Us</h2>
+      <p>
+        Every market is different. Competition is growing.
+        Brands need real impact and measurable results — not just good-looking content.
+        We create strategy-driven marketing that connects brands to the right audience and drives real business outcomes.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h2>Mission</h2>
+      <p>
+        Our mission is to empower brands with customized marketing strategies that combine clear thinking, creative execution, and measurable performance.
+        We work closely with our clients to understand their goals, market challenges, and growth opportunities, delivering integrated marketing solutions that create real business impact.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h2>Vision</h2>
+      <p>
+        To become a trusted marketing partner for brands seeking sustainable growth through strategy driven and result-oriented marketing solutions.
+        We aim to build long-term partnerships by helping businesses scale, adapt, and compete effectively in evolving markets.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> We-Wave-Agency. All rights reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
