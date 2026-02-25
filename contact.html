@@ -19,37 +19,56 @@
 
 <body>
 
-<header>
-  <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
-  <nav>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
+    <span class="brand-name">We-Wave-Agency</span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open Menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="site-nav" id="siteNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </nav>
 </header>
 
-<section style="padding:150px 40px;text-align:center;">
-  <h1>Start Your Project</h1>
+<main class="page-wrap">
+  <section class="page-hero">
+    <h1>Start Your Project</h1>
+    <p>Tell us about your goals and we’ll reply as soon as possible.</p>
+  </section>
 
-  <form action="https://formspree.io/f/mlgwabbk" method="POST" style="max-width:520px;margin:30px auto 0;">
-    <input type="hidden" name="_subject" value="New Project Request - We-Wave-Agency">
-    <input type="hidden" name="_captcha" value="false">
+  <section class="contact-wrap">
+    <form class="contact-form" action="https://formspree.io/f/mlgwabbk" method="POST">
+      <input type="hidden" name="_subject" value="New Project Request - We-Wave-Agency">
+      <input type="hidden" name="_captcha" value="false">
 
-    <input type="text" name="name" placeholder="Full Name" required style="width:100%;padding:14px;margin-bottom:14px;">
-    <input type="email" name="email" placeholder="Email Address" required style="width:100%;padding:14px;margin-bottom:14px;">
-    <input type="text" name="company" placeholder="Company Name (optional)" style="width:100%;padding:14px;margin-bottom:14px;">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="company" placeholder="Company Name (optional)">
+      <textarea name="message" placeholder="Project Details" required></textarea>
 
-    <textarea name="message" placeholder="Project Details" required style="width:100%;padding:14px;height:140px;margin-bottom:18px;"></textarea>
+      <button type="submit" class="btn" style="border:none;cursor:pointer;">Send</button>
+    </form>
 
-    <button type="submit" class="btn" style="border:none;cursor:pointer;">Send</button>
-  </form>
+    <div class="contact-info">
+      <h3>Contact Details</h3>
+      <p><b>Email:</b> Wewave111@gmail.com</p>
+      <p><b>Phone:</b> +20 1117230557</p>
+    </div>
+  </section>
+</main>
 
-  <p style="margin-top:40px;line-height:1.8;">
-    Email: Wewave111@gmail.com<br>
-    Phone: +20 1117230557
-  </p>
-</section>
+<footer class="site-footer">
+  <p>© <span id="year"></span> We-Wave-Agency. All rights reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
