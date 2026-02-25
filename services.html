@@ -18,62 +18,70 @@
 </head>
 
 <body>
-<header>
-  <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
-  <nav>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.jpg" class="logo" alt="We-Wave-Agency Logo" />
+    <span class="brand-name">We-Wave-Agency</span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open Menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav class="site-nav" id="siteNav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </nav>
 </header>
 
-<section style="padding:150px 60px;text-align:center;">
-  <h1>Services</h1>
-  <p style="max-width:850px;margin:20px auto 0;font-size:18px;line-height:1.7;">
-    Everything you need to launch, grow, and scale your brand with a business-driven mindset.
-  </p>
-</section>
+<main class="page-wrap">
+  <section class="page-hero">
+    <h1>Services</h1>
+    <p>Everything you need to launch, grow, and scale your brand with measurable results.</p>
+  </section>
 
-<section class="services-preview" style="padding-top:20px;">
-  <div class="cards">
-
-    <div class="card">
-      <h3>Brand Strategy</h3>
-      <p>Positioning, offers, messaging, and a clear plan to win in your market.</p>
+  <section class="services-preview" style="padding-top:20px;">
+    <div class="cards">
+      <div class="card">
+        <h3>Brand Strategy</h3>
+        <p>Positioning, offers, messaging, and a clear plan to win in your market.</p>
+      </div>
+      <div class="card">
+        <h3>Social Media Design</h3>
+        <p>Premium visuals, templates, and creative direction built for growth and authority.</p>
+      </div>
+      <div class="card">
+        <h3>Content Systems</h3>
+        <p>Content calendars, reels ideas, captions, and repeatable systems to stay consistent.</p>
+      </div>
+      <div class="card">
+        <h3>Performance Marketing</h3>
+        <p>Meta/TikTok campaigns, testing, optimization, and scaling for ROI.</p>
+      </div>
+      <div class="card">
+        <h3>Websites & Landing Pages</h3>
+        <p>Conversion-focused pages built to capture leads and increase sales.</p>
+      </div>
+      <div class="card">
+        <h3>E-Commerce Growth</h3>
+        <p>Funnels, CRO, and structured growth to scale your online store.</p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Social Media Design</h3>
-      <p>Premium visuals, templates, and creative direction built for growth and authority.</p>
+    <div style="margin-top:40px;text-align:center;">
+      <a class="btn" href="contact.html">Request a Quote</a>
     </div>
+  </section>
+</main>
 
-    <div class="card">
-      <h3>Content Systems</h3>
-      <p>Content calendars, reels ideas, captions, and repeatable systems to stay consistent.</p>
-    </div>
-
-    <div class="card">
-      <h3>Performance Marketing</h3>
-      <p>Meta/TikTok campaigns, testing, optimization, and scaling for ROI.</p>
-    </div>
-
-    <div class="card">
-      <h3>Websites & Landing Pages</h3>
-      <p>Conversion-focused landing pages built to capture leads and increase sales.</p>
-    </div>
-
-    <div class="card">
-      <h3>E-Commerce Growth</h3>
-      <p>Funnels, CRO, and structured growth to scale your online store.</p>
-    </div>
-
-  </div>
-
-  <div style="margin-top:40px;">
-    <a class="btn" href="contact.html">Request a Quote</a>
-  </div>
-</section>
+<footer class="site-footer">
+  <p>© <span id="year"></span> We-Wave-Agency. All rights reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
