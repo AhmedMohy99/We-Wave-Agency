@@ -16,7 +16,7 @@
     gtag('config', 'G-X4WS40NWHK');
   </script>
 
-  <!-- Libraries (only needed on homepage for the 3D background) -->
+  <!-- Only Home uses 3D libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
@@ -49,36 +49,43 @@
   <div class="hero-content">
     <h1>We-Wave-Agency</h1>
     <p>We Engineer Growth. Not Just Content.</p>
-    <a href="contact.html" class="btn">Start Your Project</a>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn">Start Your Project</a>
+      <a href="services.html" class="btn btn-outline">Explore Services</a>
+    </div>
   </div>
 </section>
 
 <section class="services-preview">
   <h2>What We Do</h2>
-  <div class="cards">
+  <p class="section-lead">Strategy-driven marketing services built for measurable results.</p>
 
+  <div class="cards">
     <div class="card">
       <h3>Social Media Design</h3>
       <p>High-converting creative systems designed for engagement and brand authority.</p>
     </div>
 
     <div class="card">
-      <h3>Website & Landing Page Development</h3>
+      <h3>Website & Landing Pages</h3>
       <p>Conversion-focused websites built to generate measurable business results.</p>
     </div>
 
     <div class="card">
-      <h3>E-Commerce Growth Solutions</h3>
+      <h3>E-Commerce Growth</h3>
       <p>Scaling online stores using structured growth strategies and funnel optimization.</p>
     </div>
 
     <div class="card">
-      <h3>Performance Marketing & Paid Advertising</h3>
+      <h3>Performance Marketing</h3>
       <p>Data-driven campaigns that maximize ROI and customer acquisition.</p>
     </div>
-
   </div>
 </section>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> We-Wave-Agency. All rights reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
